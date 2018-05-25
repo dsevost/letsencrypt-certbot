@@ -9,7 +9,7 @@ RUN \
     $YUM install -y certbot && \
     $YUM clean all
 
-CMD /bin/bash
+#CMD /bin/bash
 
 USER 1000
 
