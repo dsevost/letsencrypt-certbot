@@ -2,11 +2,11 @@ FROM rhel7
 
 USER 0
 
-#	--enablerepo rhel-7-server-optional-rpms \
 RUN \
     rpm -Uhv https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     yum \
 	--enablerepo rhel-7-server-extras-rpms \
+	--enablerepo rhel-7-server-optional-rpms \
 	install -y \
 	    certbot \
     && \
