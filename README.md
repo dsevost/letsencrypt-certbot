@@ -4,7 +4,7 @@
 $ oc new-build \
     --name acme-challenge \
     -i httpd \
-    --build-arg=YUM=yum \
+    -e YUM=yum \
     --strategy=docker \
     https://github.com/dsevost/letsencrypt-certbot
 
