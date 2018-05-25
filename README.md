@@ -1,7 +1,15 @@
 # letsencrypt-certbot
 
-oc new-app \
+oc new-build \
     --name acme-challenge \
-    httpd~https://github.com/dsevost/letsencrypt-certbot \
+    -i httpd \
+    --build-arg=YUM=yum \
     --strategy=docker \
-    --build-env=YUM=yum
+    https://github.com/dsevost/letsencrypt-certbot
+
+oc new-app \
+    --name acme-challenge-app \
+    acme-challenge~https://github.com/openshift/httpd-ex.git
+
+
+oc rsh <pod> req-cert

@@ -9,6 +9,6 @@ RUN \
     $YUM install -y certbot && \
     $YUM clean all
 
-#CMD /bin/bash
+COPY req-cert.sh /usr/local/bin
 
 USER 1001
