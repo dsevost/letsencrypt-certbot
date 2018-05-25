@@ -5,8 +5,8 @@ USER 0
 RUN \
     rpm -Uhv https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     yum \
-	--enable=rhel-7-server-optional-rpms \
-	--enable=rhel-7-server-extras-rpms \
+	--enablerepo rhel-7-server-optional-rpms \
+	--enablerepo rhel-7-server-extras-rpms \
 	install -y \
 	    certbot \
     && \
