@@ -11,6 +11,4 @@ RUN \
 
 #CMD /bin/bash
 
-USER 1000
-
-#RUN env
+USER default
