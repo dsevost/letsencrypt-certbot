@@ -1,7 +1,12 @@
 FROM fedora
 
+ARG YUM
+
 RUN \
-    dnf install -y certbot && \
-    dnf clean all
+    YUM=${YUM:="dnf"} ; \
+    $YUM install -y certbot && \
+    $YUM clean all
 
 CMD /bin/bash
+
+#RUN env
