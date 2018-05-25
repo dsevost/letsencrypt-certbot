@@ -1,0 +1,17 @@
+FROM rhel7
+
+USER 0
+
+RUN \
+    rpm -uhv https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
+    yum \
+	--enable=rhel-7-server-optional-rpms \
+	--enable=rhel-7-server-extras-rpms \
+	install -y \
+	    certbot \
+    && \
+    yum clean all
+
+COPY req-cert.sh /usr/local/bin
+
+USER 1001
