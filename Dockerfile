@@ -11,4 +11,4 @@ RUN \
 
 #CMD /bin/bash
 
-USER default
+USER 1001
